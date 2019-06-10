@@ -6,13 +6,11 @@ using System.Text;
 
 namespace Persistence
 {
-    public class StudenDbContext: DbContext
-    
+    public class StudentDbContext : DbContext
     {
-        public DbSet<Student>Student { get; set; }
-        public StudenDbContext(DbContextOptions<StudenDbContext> options)
+        public DbSet<Student> Student { get; set; }
+        public StudentDbContext(DbContextOptions<StudentDbContext> options)
             : base(options)
         { }
-
     }
 }
