@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Persistence;
+using Service;
 
 namespace WebApii
 {
@@ -28,9 +29,11 @@ namespace WebApii
         public void ConfigureServices(IServiceCollection services)
         {
            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            var connection = Configuration.GetConnectionString("Dev");
-            services.AddDbContext<StudentDbContext>
-                (options => options.UseSqlServer(connection));
+            services.AddTransient<IStudentService, StudentService>();
+           var connection = Configuration.GetConnectionString("Dev");
+           services.AddDbContext<StudentDbContext>
+               (options => options.UseSqlServer(connection));
+
 
         }
 
