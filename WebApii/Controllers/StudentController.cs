@@ -18,8 +18,9 @@ namespace WebApii.Controllers
         {
             _studentService = studentService;
         }
-
-        // GET api/values
+        ///<summary>
+        /// Obtiene los valores de API
+        /// </summary>
         [HttpGet]
         public IActionResult Get()
         {
@@ -27,8 +28,9 @@ namespace WebApii.Controllers
                 value: _studentService.GetAll()
                 );
         }
-
-        // GET api/values/5
+        ///<summary>
+        /// Obtiene los valores de api por ID
+        /// </summary>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -36,8 +38,9 @@ namespace WebApii.Controllers
                 value: _studentService.GetAll()
                 );
         }
-
-        // POST api/values
+        ///<summary>
+        /// POST api/values
+        /// </summary>
         [HttpPost]
         public IActionResult Post([FromBody] Student Model)
         {
@@ -45,8 +48,9 @@ namespace WebApii.Controllers
                 value: _studentService.Add(Model)
                 );
         }
-
-        // PUT api/values/5
+        ///<summary>
+        /// PUT api/values/5
+        /// </summary>
         [HttpPut]
         public IActionResult Put([FromBody] Student Model)
         {
@@ -54,8 +58,9 @@ namespace WebApii.Controllers
                 value: _studentService.Add(Model)
                 );
         }
-
-        // DELETE api/values/5
+        ///<summary>
+        /// Borra valores de api por ID
+        /// </summary>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
